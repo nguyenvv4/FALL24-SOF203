@@ -18,7 +18,7 @@
     Name <input type="text" name="name"> <br>
     Price <input type="text" name="price"> <br>
     Quantity <input type="text" name="quantity"> <br>
-    <button type="submit">Submit</button>
+    <button type="submit" onclick="return confirm('ban co muon them khong')">Submit</button>
 </form>
 <table>
     <thead>
@@ -37,6 +37,7 @@
             <td>${product.price}</td>
             <td>${product.quantity}</td>
             <td><a href="/chi-tiet?id=${product.id}">Detail</a></td>
+            <td><a href="/xoa?id=${product.id}">Xoa</a></td>
         </tr>
     </c:forEach>
     </tbody>

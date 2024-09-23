@@ -12,11 +12,11 @@
 </head>
 <body>
 <h2>Day la trang chi tiet</h2>
-<form action="/" method="post">
-  ID <input type="text" name="id" value="${productDetail.id}"> <br>
-  Name <input type="text" name="name"> <br>
-  Price <input type="text" name="price"> <br>
-  Quantity <input type="text" name="quantity"> <br>
+<form action="/cap-nhat" method="post">
+  ID <input type="text" name="id" value="${productDetail.id}" readonly> <br>
+  Name <input type="text" name="name" value="${productDetail.name}"> <br>
+  Price <input type="text" name="price" value="${productDetail.price}"> <br>
+  Quantity <input type="text" name="quantity" value="${productDetail.quantity}"> <br>
   <button type="submit">Update</button>
 </form>
 </body>
