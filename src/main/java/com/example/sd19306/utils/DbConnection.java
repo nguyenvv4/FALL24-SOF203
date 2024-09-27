@@ -1,6 +1,7 @@
 package com.example.sd19306.utils;
 
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -38,8 +39,12 @@ public class DbConnection {
         return null;
     }
 
-    public static void main(String[] args) {
-        getConnection();
+    public static void main(String[] args) throws Exception {
+        Connection conn = getConnection();
+        DatabaseMetaData dbmt = conn.getMetaData();
+        System.out.println(dbmt.getDriverName());
+        System.out.println(dbmt.getDatabaseProductName());
+        System.out.println(dbmt.getDatabaseProductVersion());
     }
 
     /*
