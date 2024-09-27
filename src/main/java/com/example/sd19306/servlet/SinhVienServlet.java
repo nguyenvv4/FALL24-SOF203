@@ -10,7 +10,8 @@ import java.util.ArrayList;
 
 @WebServlet(name = "SinhVienServlet", value = {"/sinh-vien/hien-thi",
         "/sinh-vien/add",
-        "/sinh-vien/update"
+        "/sinh-vien/update",
+        "/sinh-vien/detail"
 })
 public class SinhVienServlet extends HttpServlet {
 
@@ -28,6 +29,17 @@ public class SinhVienServlet extends HttpServlet {
         if (uri.contains("/sinh-vien/hien-thi")) {
             request.setAttribute("list", list);
             request.getRequestDispatcher("/sinh-vien.jsp").forward(request, response);
+        } else if (uri.contains("/sinh-vien/detail")) {
+            String id = request.getParameter("id");
+            SinhVien sinhVienDetail = new SinhVien();
+            for (SinhVien sinhVien : list) {
+                if (sinhVien.getId().equals(id)) {
+                    sinhVienDetail = sinhVien;
+                }
+            }
+
+            request.setAttribute("sinhVien", sinhVienDetail);
+            request.getRequestDispatcher("/sinh-vien-detail.jsp").forward(request, response);
         }
     }
 

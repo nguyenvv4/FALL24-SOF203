@@ -49,6 +49,7 @@
             <td>${sinhVien.diaChi}</td>
             <td>${sinhVien.lop}</td>
             <td>${sinhVien.trangThai}</td>
+            <td><a href="/sinh-vien/detail?id=${sinhVien.id}">Detail</a></td>
         </tr>
     </c:forEach>
     </tbody>
